@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grille des programmes</title>
+<link rel="stylesheet" href="Design App.css">
+</head>
+<body>
+<h1>Grille des programmes</h1>
+<button id="regie">Mode régie</button>
+<div id="horloge"></div>
+<div id="direct"></div>
+
+<div class="jours">
+  <button id="hier">Hier</button>
+  <button id="auj">Aujourd'hui</button>
+  <button id="demain">Demain</button>
+  <input id="jourChoisi" type="date">
+</div>
+<h2 id="titreJour"></h2>
+
+<form id="f">
+  <input id="titre" placeholder="Émission" required>
+  <select id="cat">
+    <option>Info</option><option>Magazine</option>
+    <option>Divertissement</option><option>Film</option><option>Sport</option>
+  </select>
+  <label>Jour <input id="date" type="date" required></label>
+  <label>Début <input id="debut" type="time" required></label>
+  <label>Fin <input id="fin" type="time" required></label>
+  <span id="dureeAff"></span>
+  <button id="btnForm">Ajouter</button>
+  <button type="button" id="annuler" hidden>Annuler</button>
+</form>
+
+<div class="outils">
+  <input id="recherche" type="search" placeholder="Rechercher une émission…">
+  <select id="filtreCat">
+    <option value="">Toutes les catégories</option>
+    <option>Info</option><option>Magazine</option>
+    <option>Divertissement</option><option>Film</option><option>Sport</option>
+  </select>
+  <button id="supprSel" disabled>Supprimer la sélection</button>
+</div>
+
+<div class="tableau">
+  <table>
+    <thead>
+      <tr>
+        <th><input type="checkbox" id="toutCocher"></th>
+        <th>Heure</th><th>Émission</th><th>Catégorie</th><th></th>
+      </tr>
+    </thead>
+    <tbody id="liste"></tbody>
+  </table>
+</div>
+<p id="vide" hidden>Aucune émission pour ce jour.</p>
+
+<script src="programmes.js"></script>
+</body>
+</html>

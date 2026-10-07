@@ -1,0 +1,50 @@
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none !important}
+body{font-family:Arial,sans-serif;max-width:900px;margin:20px auto;padding:0 12px}
+input,select,button{padding:8px;font:inherit}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed;opacity:.5}
+
+/* Bandeau à l'antenne */
+#direct{background:#14213d;color:#fff;padding:16px;border-radius:10px;margin:16px 0}
+#direct small{opacity:.8}
+#direct h2{margin:6px 0}
+.barre{height:8px;background:#ffffff33;border-radius:4px;overflow:hidden;margin:10px 0}
+#prog{height:100%;background:#e76f51}
+.live{color:#ff5a5a;font-weight:bold;opacity:1 !important;animation:clig 1.5s infinite}
+@keyframes clig{50%{opacity:.3}}
+
+.jours{display:flex;gap:8px;flex-wrap:wrap}
+.jours button.actif{background:#14213d;color:#fff}
+
+form,.outils{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.outils input[type="search"]{flex:1;min-width:180px}
+
+.tableau{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+td,th{border-bottom:1px solid #ddd;padding:8px;text-align:left}
+.now{background:#fff3cd;font-weight:bold}
+
+[data-cat="Info"]{--c:#2a6fdb}
+[data-cat="Film"]{--c:#7b3fc4}
+[data-cat="Divertissement"]{--c:#ef8a17}
+[data-cat="Sport"]{--c:#1f9d55}
+[data-cat="Magazine"]{--c:#d6336c}
+tr[data-cat] td:first-child{box-shadow:inset 5px 0 0 var(--c)}
+.badge{background:var(--c);color:#fff;padding:3px 10px;border-radius:999px;font-size:.85em}
+
+@media (max-width:600px){
+  h1{font-size:1.5rem}
+  #direct h2{font-size:1.2rem}
+  form,.outils{flex-direction:column;align-items:stretch}
+  td,th{padding:6px 4px;font-size:.9rem}
+}
+
+#horloge{display:none}
+.regie h1,.regie form,.regie .tableau,.regie .jours,.regie .outils,
+.regie #titreJour,.regie #vide,.regie #regie{display:none}
+.regie{max-width:none;margin:0;padding:0 5vw;min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:#0b1426}
+.regie #horloge{display:block;color:#fff;font-size:8vw;font-weight:bold;text-align:center;margin-bottom:30px}
+.regie #direct{margin:0;font-size:3vw}
+.regie #direct h2{font-size:6vw}
+.regie .barre{height:20px}
